@@ -1,12 +1,15 @@
 package th.ac.ku.atm.model;
 
-public class BankAcc {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+public class BankAccount {
     private int id;
     private String cusid;
     private String type;
     private int balance;
 
-    public BankAcc(int id, String cusid, String type, int balance) {
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public BankAccount(int id, String cusid, String type, int balance) {
         this.id = id;
         this.cusid = cusid;
         this.type = type;
